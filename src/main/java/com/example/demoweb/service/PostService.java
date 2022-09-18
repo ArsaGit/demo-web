@@ -7,6 +7,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.function.LongConsumer;
 
 @Service
 public class PostService {
@@ -24,6 +25,6 @@ public class PostService {
     }
 
     public void create(String text) {
-        posts.add(new Post(text, new Date()));
+        posts.add(new Post( Long.valueOf(posts.size()), text, new Date()));
     }
 }
